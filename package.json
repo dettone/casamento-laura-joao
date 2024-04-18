@@ -5,6 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "sudo docker compose --file infra/compose.yaml up --detach && next dev",
+    "service:up": "docker compose --file infra/compose.yaml up --detach",
+    "service:stop": "docker compose --file infra/compose.yaml stop",
+    "service:down": "docker compose --file infra/compose.yaml down",
     "lint:check": "prettier --check .",
     "lint:fix": "prettier --write .",
     "build": "next build",
