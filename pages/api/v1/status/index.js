@@ -4,7 +4,7 @@ async function status(req, res) {
   const updatedAt = new Date().toISOString();
 
   const databaseName = process.env.POSTGRES_DB;
-  
+    console.log(databaseName)
   const postgreesVersion = await database.query("SHOW server_version;");
   const maxConnections = await database.query("SHOW max_connections;");
   const databaseOpenedConnectionsResults = await database.query({text : "SELECT count(*)::int FROM pg_stat_activity WHERE datname = $1",
